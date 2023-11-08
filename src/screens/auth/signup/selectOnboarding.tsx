@@ -18,7 +18,7 @@ const SelectOnboarding = ({ navigation }: any) => {
                 }}>
                     <Image source={require("../../../../assets/logo/logo.png")} resizeMode='contain' style={{ width: 100, height: 100 }} />
                     <View style={{ width: '60%', marginHorizontal: "auto" }}>
-                        <CustomText style={{ marginTop: 20, fontSize: 16, fontWeight: '400', lineHeight: 32, textAlign: "center" }}>Sign up for GeoCast</CustomText>
+                        <CustomText style={{ marginTop: 20, fontSize: 16, fontWeight: '400', lineHeight: 32, textAlign: "center" }}>Sign up for proxie</CustomText>
                         <CustomText style={{ marginTop: 20, fontSize: 14, fontWeight: '300', lineHeight: 24, textAlign: "center" }}>Create an account, get traffic updates, stream live road events and connect.</CustomText>
                     </View>
                 </View>

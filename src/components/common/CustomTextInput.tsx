@@ -4,8 +4,8 @@ import Colors from '../../theme/colors';
 
 const CustomTextInput = ({ style, ...rest }: any) => {
     const defaultStyles = {
-        backgroundColor: Colors.white,
-        borderColor: '#F1F1F1',
+        backgroundColor: "transparent",
+        borderColor:Colors.grey,
         borderWidth: 1,
         color: Colors.black,
         marginTop: 1,

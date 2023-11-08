@@ -9,18 +9,17 @@ const GettingStarted = ({ navigation }: any) => {
   
     return (
         <View style={styles.container}>
-            {
+            {/* {
                 page === 0 && 
-            <ScrollCard image={require('../../../assets/images/onboarding/img1.png')} title={'Live Streaming'} description={'Go beyond traditional streaming with Geocast. Share your real-time experiences, discoveries, and adventures with the world. Showcase your creativity, talents, and interests to a global audience.'} index={page} onPress={()=> setpage(page+1)} />
+            <ScrollCard image={require('../../../assets/images/onboarding/img1.png')} title={'Live Streaming'} description={'Go beyond traditional streaming with proxie. Share your real-time experiences, discoveries, and adventures with the world. Showcase your creativity, talents, and interests to a global audience.'} index={page} onPress={()=> setpage(page+1)} />
             }
             {
                 page === 1 && 
-                <ScrollCard image={require('../../../assets/images/onboarding/img2.png')} title={'Real-Time Mapping'} description={"Geocast leverages the power of Google Maps to provide you with accurate and up-to-date maps. Whether you're an adventurer, travel enthusiast, or simply looking for your way around town."} index={page} onPress={()=> setpage(page+1)} />
+                <ScrollCard image={require('../../../assets/images/onboarding/img2.png')} title={'Real-Time Mapping'} description={"proxie leverages the power of Google Maps to provide you with accurate and up-to-date maps. Whether you're an adventurer, travel enthusiast, or simply looking for your way around town."} index={page} onPress={()=> setpage(page+1)} />
             }
             {
-                page === 2 && 
+                page === 2 &&  */}
                 <SelectOnboarding/>
-            }
          
         </View>
     )
@@ -31,7 +30,7 @@ export default GettingStarted
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.bgPrimary,
         flexDirection: "column",
         alignItems: 'center',
         justifyContent: 'center',

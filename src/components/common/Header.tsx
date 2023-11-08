@@ -2,6 +2,7 @@ import React from 'react';
 import { View, TouchableOpacity, StyleSheet, SafeAreaView } from 'react-native';
 import { TCustomHeader } from '../../constants/types/types';
 import CustomText from './CustomText';
+import Colors from '../../theme/colors';
 
 const CustomHeader = ({ title, leftIcon, rightIcon, onLeftPress, onRightPress, headerStyle, titleStyle }: TCustomHeader) => {
     return (
@@ -35,15 +36,15 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-between',
         paddingHorizontal: 16,
-        height: 100,
-        backgroundColor: '#fff',
+        height: 80,
+        backgroundColor: Colors.bgPrimary,
     },
     iconContainer: {
         padding: 8,
     },
     title: {
         fontSize: 18,
-        color: 'black',
+       color: Colors.white,
         fontWeight:"400"
     },
 });

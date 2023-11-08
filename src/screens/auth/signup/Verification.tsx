@@ -14,7 +14,7 @@ const Verification = ({ navigation, route }: any) => {
 
     return (
         <>
-            <CustomHeader title='Verify Email Address' leftIcon={<MaterialCommunityIcons name='arrow-left' size={20} />} onLeftPress={() => navigation.goBack()} />
+            <CustomHeader title='Verify Email Address' leftIcon={<MaterialCommunityIcons name='arrow-left' size={20} color={Colors.white} />} onLeftPress={() => navigation.goBack()} />
             <View style={styles.container}>
                 <View style={{ width: "100%", marginHorizontal: "auto", height: 115, flexDirection: "column", justifyContent: "space-between"}}>
                     <OTPInput
@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         height: "100%",
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.bgPrimary,
         paddingHorizontal: 20
     },
 })
