@@ -63,7 +63,7 @@ function BottomTab() {
         options={{
           headerShown: false,
           tabBarIcon: ({ color, focused }: any) => (
-              <Image source={require("../../assets/images/bottombar/profile.png")} style={{ height: 30, width: 30 }} />
+              <Image source={require("../../assets/images/bottombar/profile.png")} style={{ height: 20, width: 20 }} />
           ),
         } as never}
       />
