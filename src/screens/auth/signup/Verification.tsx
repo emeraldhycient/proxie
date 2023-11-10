@@ -29,7 +29,7 @@ const Verification = ({ navigation, route }: any) => {
                         cellStyle={{ borderRadius: 12, height: 50, width: 50, borderColor: Colors.grey, borderWidth: 0.6 }}
                     />
                     <CustomText style={{ fontSize: 14, color: Colors.grey, textAlign: 'left', marginVertical: 20,marginLeft:10 }}>Resend Code</CustomText>
-                    <Button title='Confirm' onPress={() => navigation.navigate("UserDetails")} br={12} h={50} color={Colors.white} bg={Colors.primary} />
+                    <Button title='Confirm' onPress={() => navigation.navigate("Login")} br={12} h={50} color={Colors.white} bg={Colors.primary} />
                 </View>
             </View>
         </>
