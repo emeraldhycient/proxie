@@ -17,7 +17,7 @@ const Login = ({ navigation }: any) => {
   return (
     <View style={{ flex: 1, backgroundColor: Colors.bgPrimary }}>
       <CustomHeader title=' ' leftIcon={<MaterialCommunityIcons name='arrow-left' size={20} color={Colors.white} />} onLeftPress={() => navigation.goBack()} />
-      <View style={{ paddingHorizontal: 20 }}>
+      <View style={{ paddingHorizontal: 20, backgroundColor: Colors.bgPrimary }}>
         <View>
           <CustomText style={styles.title}>sign in </CustomText>
           <CustomText style={styles.subtitle}>To get started !</CustomText>

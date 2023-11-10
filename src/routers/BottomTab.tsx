@@ -19,33 +19,19 @@ function BottomTab() {
     <Navigator
       activeColor={Colors.primary}
       inactiveColor={Colors.gray}
-      barStyle={{ backgroundColor: Colors.white }}
+      barStyle={{ backgroundColor: Colors.black }}
+      labeled={false}
     >
       <Screen
         name="home"
         component={Dashboard}
         options={{
           headerShown: false,
-          tabBarLabel: "Home",
           tabBarIcon: ({ color,focused }: any) => (
             focused ?
               <Image source={require("../../assets/images/bottombar/ICON.png")} style={{ height: 30, width: 30 }} />
               :
               <Image source={require("../../assets/images/bottombar/home-in.png")} style={{ height: 20, width: 20 }} />
-          ),
-        } as never}
-      />
-      <Screen
-        name="map"
-        component={MapScreen}
-        options={{
-          headerShown: false,
-          tabBarLabel: "Map",
-          tabBarIcon: ({ color, focused }: any) => (
-            focused ?
-              <Image source={require("../../assets/images/bottombar/search-a.png")} style={{ height: 30, width: 30 }} />
-              :
-              <Image source={require("../../assets/images/bottombar/search-in.png")} style={{ height: 20, width: 20 }} />
           ),
         } as never}
       />
@@ -57,7 +43,6 @@ function BottomTab() {
             <View
               style={{
                 position: 'absolute',
-                bottom: -13, // space from bottombar
                 height: 40,
                 width: 40,
                 borderRadius: 68,
@@ -66,32 +51,17 @@ function BottomTab() {
                 alignItems: 'center',
               }}
             >
-              <Image source={require("../../assets/images/bottombar/stream.png")} style={{ height: 50, width: 50 }} />
+              <Image source={require("../../assets/images/bottombar/stream.png")} style={{ height: 35, width: 35 }} />
             </View>
           ),
-          tabBarLabel: '',
         }}
       />
-      <Screen
-        name="trending"
-        component={Trending}
-        options={{
-          headerShown: false,
-          tabBarLabel: "Trending",
-          tabBarIcon: ({ color, focused }: any) => (
-            focused ?
-              <Image source={require("../../assets/images/bottombar/trending-a.png")} style={{ height: 30, width: 30 }} />
-              :
-              <Image source={require("../../assets/images/bottombar/trending.png")} style={{ height: 20, width: 20 }} />
-          ),
-        } as never}
-      />
+    
       <Screen
         name="profile"
         component={Dashboard}
         options={{
           headerShown: false,
-          tabBarLabel: "Account",
           tabBarIcon: ({ color, focused }: any) => (
               <Image source={require("../../assets/images/bottombar/profile.png")} style={{ height: 30, width: 30 }} />
           ),

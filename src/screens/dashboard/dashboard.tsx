@@ -1,54 +1,24 @@
-import { View, Image, ScrollView, TouchableOpacity, StyleSheet } from 'react-native'
+import { View, Image, ScrollView, TouchableOpacity, StyleSheet, useWindowDimensions } from 'react-native'
 import React from 'react'
 import CustomHeader from '../../components/common/Header'
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Colors from '../../theme/colors';
 import CategoryPills from '../../components/dashboard/CategoryPills';
 import StreamCard from './streamCard';
+import Button from '../../components/common/button';
 
 const Dashboard = ({ navigation }: any) => {
 
-    const categories = ['Books', 'Electronics', 'Clothing', 'Games', 'Music', 'Sports'];
-
-    // State to hold the selected category
-    const [selectedCategory, setSelectedCategory] = React.useState(categories[0]);
-
+    const { height } = useWindowDimensions()
+    
     return (
-        <ScrollView>
-            <CustomHeader
-                title=' '
-                leftIcon={<Image source={require("../../../assets/images/dashboard/user.png")} style={{ width: 40, height: 40 }} />}
-                onLeftPress={() => { }}
-                rightIcon={
-                    <View style={styles.righticon}>
-                        <TouchableOpacity onPress={() => navigation.navigate('notifications')}>
-                            <Image source={require("../../../assets/images/dashboard/notificationbing.png")} style={{ width: 20, height: 20 }} />
-                        </TouchableOpacity>
-                        <TouchableOpacity onPress={() => navigation.navigate('notifications')}>
-                            <Image source={require("../../../assets/images/dashboard/messagetext1.png")} style={{ width: 20, height: 20 }} />
-                        </TouchableOpacity>
-                    </View>
-                }
-                onRightPress={() => { }}
-            />
-            <CategoryPills categories={categories} selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
-            <View style={styles.categorycontainer}>
-                <StreamCard
-                    // imageUri="https://via.placeholder.com/150"
-                    source={require("../../../assets/images/dashboard/VIDEO.png")}
-                    title="Global Music Limehouse"
-                    subtitle="@ezemmuo"
-                    viewersCount="1.2K views"
-                    islive
-                />
-                <StreamCard
-                    imageUri="https://via.placeholder.com/150"
-                    title="Global Music Limehouse"
-                    subtitle="@ezemmuo"
-                    viewersCount="1.2K views"
-                    islive={false}
-                />
-
+        <ScrollView style={{ backgroundColor: Colors.bgPrimary }} contentContainerStyle={{height:height}}>
+            <CustomHeader/>
+            <View style={{ height: "100%",width:"100%",paddingHorizontal:20,justifyContent:"center",alignItems:"center" }}>
+                <Image source={require("../../../assets/images/dashboard/home.png")} style={{ width: "80%", height: 200 }} />
+                <View style={{ width: "100%", marginHorizontal: "auto", height: 160, flexDirection: "column", justifyContent: "space-between", marginTop: 40 }}>
+                    <Button title='Add device' onPress={() => {}} br={6} h={50} color={Colors.white} bg={Colors.primary} />  
+                </View>
             </View>
         </ScrollView>
     )
@@ -69,7 +39,7 @@ const styles = StyleSheet.create({
         flexWrap: 'wrap',
         justifyContent: 'space-between',
         alignItems: "center",
-        paddingHorizontal:"2%"
+        paddingHorizontal: "2%"
     }
 })
 
