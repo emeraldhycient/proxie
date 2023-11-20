@@ -1,6 +1,7 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import BottomTab from "./BottomTab";
 import AuthStack from "./Auth";
+import ConnectDevice from "../screens/dashboard/connectDevice";
 
 function MainStack() {
 
@@ -21,6 +22,14 @@ function MainStack() {
       <Stack.Screen
         name="application"
         component={BottomTab}
+        options={{
+          headerShown: false,
+        }}
+      />
+     
+      <Stack.Screen
+        name="connectDevice"
+        component={ConnectDevice}
         options={{
           headerShown: false,
         }}

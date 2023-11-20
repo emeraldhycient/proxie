@@ -35,7 +35,7 @@ export default function App() {
 
   return (
     <View style={{ flex: 1 }}>
-      <StatusBar style="auto" />
+      <StatusBar style="light" />
       <NavigationContainer>
         <PaperProvider theme={theme}>
           {
