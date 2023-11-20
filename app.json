@@ -28,6 +28,14 @@
       "favicon": "./assets/favicon.png"
     },
     "owner": "raldweb",
+    "plugins": [
+      [
+        "expo-barcode-scanner",
+        {
+          "cameraPermission": "Allow $(PRODUCT_NAME) to access camera."
+        }
+      ]
+    ],
     "extra": {
       "eas": {
         "projectId": "3f189f36-3d00-45b4-93d6-1f42b7530a71"
