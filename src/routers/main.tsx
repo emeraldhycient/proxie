@@ -2,6 +2,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import BottomTab from "./BottomTab";
 import AuthStack from "./Auth";
 import ConnectDevice from "../screens/dashboard/connectDevice";
+import Device from "../screens/dashboard/device";
 
 function MainStack() {
 
@@ -30,6 +31,14 @@ function MainStack() {
       <Stack.Screen
         name="connectDevice"
         component={ConnectDevice}
+        options={{
+          headerShown: false,
+        }}
+      />
+     
+      <Stack.Screen
+        name="device"
+        component={Device}
         options={{
           headerShown: false,
         }}

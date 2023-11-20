@@ -8,16 +8,17 @@ const CustomHeader = ({ title, leftIcon, rightIcon, onLeftPress, onRightPress, h
     return (
         <SafeAreaView>
             <View style={[styles.headerContainer, headerStyle]}>
-                <View style={{width:"10%"}}>
+                <View style={{flexDirection:"row",alignItems:"center"}}>
                     {leftIcon && onLeftPress && (
                         <TouchableOpacity onPress={onLeftPress} style={styles.iconContainer}>
                             {leftIcon}
                         </TouchableOpacity>
                     )}
-                </View>
-                <View style={{ width: "70%",justifyContent:"center",alignItems:"center" }}>
                     <CustomText style={[styles.title, titleStyle]}>{title}</CustomText>
                 </View>
+                {/* <View style={{ width: "70%",justifyContent:"center",alignItems:"center" }}>
+                    <CustomText style={[styles.title, titleStyle]}>{title}</CustomText>
+                </View> */}
                 <View style={{ width: "20%" }}>
                     {rightIcon && onRightPress && (
                         <TouchableOpacity onPress={onRightPress} style={styles.iconContainer}>
@@ -36,7 +37,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-between',
         paddingHorizontal: 16,
-        height: 80,
+        height: 70,
+        paddingTop: 30,
         backgroundColor: Colors.bgPrimary,
     },
     iconContainer: {

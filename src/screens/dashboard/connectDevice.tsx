@@ -7,7 +7,7 @@ import CustomText from '../../components/common/CustomText';
 import { TextInput, TouchableRipple } from "react-native-paper"
 import CustomTextInput from '../../components/common/CustomTextInput';
 import { BarCodeScanner } from 'expo-barcode-scanner';
-
+import AntDesign from "react-native-vector-icons/AntDesign"
 
 const ConnectDevice = ({ navigation }: any) => {
 
@@ -39,17 +39,8 @@ const ConnectDevice = ({ navigation }: any) => {
     };
 
     return (
-        <ScrollView style={{ backgroundColor: Colors.bgPrimary, flex: 1, height: "100%" }} contentContainerStyle={{ height: "100%", width: '100%' }}>
-            <SafeAreaView>
-                <View style={[styles.headerContainer]}>
-                    <View style={{ marginTop: 40 }}>
-                        <CustomText style={styles.title}>{stage === 0 ? "connect your device" : stage === 1 ? "select an icon for your device" : "scan qr code of device"}</CustomText>
-                    </View>
-                    {/* <View style={{ width: "20%", alignItems: "flex-end", marginTop: 40 }}>
-                        <Entypo name='dots-three-vertical' color={Colors.white} size={20} />
-                    </View> */}
-                </View>
-            </SafeAreaView>
+        <ScrollView style={{ backgroundColor: Colors.bgPrimary, flex: 1 }} contentContainerStyle={{ width: '100%' }}>
+            <CustomHeader leftIcon={<AntDesign name='arrowleft' size={22} color={Colors.white} />} onLeftPress={() => navigation.goBack()} title={stage === 0 ? "connect your device" : stage === 1 ? "select an icon for your device" : "scan qr code of device"} />
             {
                 stage === 0 &&
                 <View style={{ height: "100%", width: "100%", paddingHorizontal: 20 }}>
@@ -96,10 +87,10 @@ const ConnectDevice = ({ navigation }: any) => {
                 <View style={{ height: "100%", width: "100%", paddingHorizontal: 20 }}>
                     <BarCodeScanner
                         onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
-                        style={{height:"60%",width:"100%"}}
+                        style={{ height: "60%", width: "100%" }}
                     />
                     {scanned && <Button title={'Tap to Scan Again'} color={Colors.white} mt={20} onPress={() => setScanned(false)} />}
-                    <Button title='Connect' onPress={() => { }} br={6} h={50} mt={20}  color={Colors.white} bg={Colors.primary} />
+                    <Button title='Connect' onPress={() => { }} br={6} h={50} mt={20} color={Colors.white} bg={Colors.primary} />
                 </View>
             }
 

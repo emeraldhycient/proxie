@@ -5457,7 +5457,7 @@ prompts@^2.3.2, prompts@^2.4.0:
     kleur "^3.0.3"
     sisteransi "^1.0.5"
 
-prop-types@*, prop-types@^15.6.2, prop-types@^15.7.2:
+prop-types@*, prop-types@^15.5.10, prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.8.1"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.8.1.tgz#67d87bf1a694f48435cf332c24af10214a3140b5"
   integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==
@@ -5592,6 +5592,11 @@ react-native-country-picker-modal@^2.0.0:
     prop-types "15.7.2"
     react-async-hook "3.6.1"
 
+react-native-custom-switch@^1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/react-native-custom-switch/-/react-native-custom-switch-1.0.7.tgz#f41ec873b7c64983ba220b56c874a4b39a00a962"
+  integrity sha512-K4QDvh20F9KVQFmTr/PAta8JN2WofO7Ks4ZIq2U3EHKlRXMoMP0AplrV4oR5oRclaw9ltWecivrK/xWX85HC8A==
+
 react-native-gesture-handler@~2.12.0:
   version "2.12.1"
   resolved "https://registry.yarnpkg.com/react-native-gesture-handler/-/react-native-gesture-handler-2.12.1.tgz#f11a99fb95169810c6886fad5efa01a17fd81660"
@@ -5638,6 +5643,13 @@ react-native-screens@~3.22.0:
   dependencies:
     react-freeze "^1.0.0"
     warn-once "^0.1.0"
+
+react-native-switch-pro@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/react-native-switch-pro/-/react-native-switch-pro-1.0.5.tgz#9954e11f15a0ef4e8e92a4aba5019e6e29c9162f"
+  integrity sha512-ZkS7/mRsJsG7heE12Y8emv3jAS2waLhk+3fyqoxq8k/r4Q4Uzzm3Q3gSECOJd5COJZT1B48c+xXW80FOrQpYtQ==
+  dependencies:
+    prop-types "^15.5.10"
 
 react-native-vector-icons@^10.0.0:
   version "10.0.0"
