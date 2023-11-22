@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import Entypo from 'react-native-vector-icons/Entypo';
 import Colors from '../../theme/colors';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import CustomText from './CustomText';
 
 const ToolTip = ({ children, contentConatinerStyle }: any) => {
 
@@ -14,7 +15,7 @@ const ToolTip = ({ children, contentConatinerStyle }: any) => {
                 <Entypo name='dots-three-vertical' color={Colors.white} size={20} />
             </TouchableOpacity>
             {isShowing &&
-                <View style={{ position: "absolute", right: 0, top: 25, width: 170, height: 170, borderRadius: 20, backgroundColor: "#9A9494", alignItems: "center", justifyContent: "center", zIndex: 30 }}>
+                <View style={{ position: "absolute", right: 0, top: 25, width: 170, borderRadius: 20, backgroundColor: "#9A9494", zIndex: 30 }}>
                     {
                         children
                     }

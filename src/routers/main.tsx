@@ -3,6 +3,7 @@ import BottomTab from "./BottomTab";
 import AuthStack from "./Auth";
 import ConnectDevice from "../screens/dashboard/connectDevice";
 import Device from "../screens/dashboard/device";
+import Notification from "../screens/dashboard/ notification";
 
 function MainStack() {
 
@@ -39,6 +40,13 @@ function MainStack() {
       <Stack.Screen
         name="device"
         component={Device}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="notifications"
+        component={Notification}
         options={{
           headerShown: false,
         }}

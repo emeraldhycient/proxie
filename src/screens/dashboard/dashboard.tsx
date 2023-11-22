@@ -26,14 +26,25 @@ const Dashboard = ({ navigation }: any) => {
                         <CustomText style={styles.title}>james</CustomText>
                     </View>
                     <ToolTip >
-                        <CustomText style={{color:"red"}}>my profile</CustomText>
-                        <CustomText>scan qr code</CustomText>
-                        <CustomText>notification</CustomText>
-                        <CustomText>sign out</CustomText>
+                        <View style={{ paddingHorizontal: 20, paddingVertical: 10 }}>
+                            <TouchableOpacity onPress={() => navigation.navigate("notifications")}>
+                                <CustomText style={{ marginVertical: 5 }}>notification</CustomText>
+                            </TouchableOpacity>
+                            <TouchableOpacity onPress={()=>navigation.navigate("profile")}>
+                                <CustomText style={{ marginVertical: 5 }}>my profile</CustomText>
+                            </TouchableOpacity>
+                            <TouchableOpacity onPress={() => navigation.navigate("connectDevice")}>
+                                <CustomText style={{ marginVertical: 5 }}>scan qr code</CustomText>
+                            </TouchableOpacity>
+  
+                            <TouchableOpacity onPress={()=>navigation.navigate("profile")}>
+                                <CustomText style={{ marginVertical: 5 }}>sign out</CustomText>
+                            </TouchableOpacity>
+                        </View>
                     </ToolTip>
                 </View>
             </SafeAreaView>
-            <View style={{ marginTop: 40, paddingHorizontal: 20,zIndex:1 }}>
+            <View style={{ marginTop: 40, paddingHorizontal: 20, zIndex: 1 }}>
                 {
                     isEmpty &&
                     <EmptyState setisEmpty={setisEmpty} navigation={navigation} />
