@@ -6,6 +6,7 @@ import AntDesign from "react-native-vector-icons/AntDesign"
 import CustomText from '../../components/common/CustomText';
 import Entypo from 'react-native-vector-icons/Entypo';
 import CustomSwitch from '../../components/common/customSwitch';
+import ToolTip from '../../components/common/ToolTip';
 
 
 
@@ -24,9 +25,12 @@ const Device = ({ navigation }: any) => {
                             <CustomText style={styles.greetings}>bath room</CustomText>
                         </View>
                     </View>
-                    <View style={{ width: "20%", alignItems: "flex-end", marginTop: 40 }}>
-                        <Entypo name='dots-three-vertical' color={Colors.white} size={20} />
-                    </View>
+                    <ToolTip >
+                        <CustomText style={{ color: "red" }}>my profile</CustomText>
+                        <CustomText>scan qr code</CustomText>
+                        <CustomText>notification</CustomText>
+                        <CustomText>sign out</CustomText>
+                    </ToolTip>
                 </View>
             </SafeAreaView>
             <View style={{ marginTop: 40, paddingHorizontal: 20 }}>

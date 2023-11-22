@@ -22,9 +22,7 @@ const Profile = ({ navigation }: any) => {
 
                         </View>
                     </View>
-                    <View style={{ width: "20%", alignItems: "flex-end", marginTop: 40 }}>
-                        <Entypo name='dots-three-vertical' color={Colors.white} size={20} />
-                    </View>
+                  
                 </View>
             </SafeAreaView>
             <View style={{ paddingHorizontal: 20 }}>

@@ -8,6 +8,7 @@ import Entypo from 'react-native-vector-icons/Entypo';
 import EmptyState from '../../components/dashboard/emptyState';
 import FavCard from '../../components/dashboard/FavCard';
 import GroupCard from '../../components/dashboard/groupCard';
+import ToolTip from '../../components/common/ToolTip';
 
 
 const Dashboard = ({ navigation }: any) => {
@@ -24,12 +25,15 @@ const Dashboard = ({ navigation }: any) => {
                         <CustomText style={styles.greetings}>good morning</CustomText>
                         <CustomText style={styles.title}>james</CustomText>
                     </View>
-                    <View style={{ width: "20%", alignItems: "flex-end", marginTop: 40 }}>
-                        <Entypo name='dots-three-vertical' color={Colors.white} size={20} />
-                    </View>
+                    <ToolTip >
+                        <CustomText style={{color:"red"}}>my profile</CustomText>
+                        <CustomText>scan qr code</CustomText>
+                        <CustomText>notification</CustomText>
+                        <CustomText>sign out</CustomText>
+                    </ToolTip>
                 </View>
             </SafeAreaView>
-            <View style={{ marginTop: 40, paddingHorizontal: 20 }}>
+            <View style={{ marginTop: 40, paddingHorizontal: 20,zIndex:1 }}>
                 {
                     isEmpty &&
                     <EmptyState setisEmpty={setisEmpty} navigation={navigation} />
