@@ -28,13 +28,13 @@ const Dashboard = ({ navigation }: any) => {
                     <ToolTip >
                         <View style={{ paddingHorizontal: 20, paddingVertical: 10 }}>
                             <TouchableOpacity onPress={() => navigation.navigate("notifications")}>
-                                <CustomText style={{ marginVertical: 5 }}>notification</CustomText>
+                                <CustomText style={{ marginVertical: 5 }}>Notification</CustomText>
                             </TouchableOpacity>
                             <TouchableOpacity onPress={()=>navigation.navigate("profile")}>
-                                <CustomText style={{ marginVertical: 5 }}>my profile</CustomText>
+                                <CustomText style={{ marginVertical: 5 }}>My profile</CustomText>
                             </TouchableOpacity>
                             <TouchableOpacity onPress={() => navigation.navigate("connectDevice")}>
-                                <CustomText style={{ marginVertical: 5 }}>scan qr code</CustomText>
+                                <CustomText style={{ marginVertical: 5 }}>Scan qr code</CustomText>
                             </TouchableOpacity>
   
                             <TouchableOpacity onPress={()=>navigation.navigate("profile")}>
