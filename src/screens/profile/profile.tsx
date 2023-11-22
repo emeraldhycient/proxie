@@ -5,13 +5,11 @@ import Colors from '../../theme/colors';
 import AntDesign from "react-native-vector-icons/AntDesign"
 import CustomText from '../../components/common/CustomText';
 import Entypo from 'react-native-vector-icons/Entypo';
-import CustomSwitch from '../../components/common/customSwitch';
+import CustomTextInput from '../../components/common/CustomTextInput';
 
 
 
-const Device = ({ navigation }: any) => {
-    const [checked, setChecked] = React.useState(false);
-
+const Profile = ({ navigation }: any) => {
 
     return (
         <ScrollView style={{ backgroundColor: Colors.bgPrimary }}>
@@ -20,8 +18,8 @@ const Device = ({ navigation }: any) => {
                     <View style={{ flexDirection: "row", alignItems: "center", marginTop: 40 }}>
                         <TouchableOpacity onPress={() => navigation.goBack()}><AntDesign name='arrowleft' size={22} color={Colors.white} /></TouchableOpacity>
                         <View style={{ marginLeft: 10 }}>
-                            <CustomText style={styles.title}>water heater</CustomText>
-                            <CustomText style={styles.greetings}>bath room</CustomText>
+                            <CustomText style={styles.title}>my profile</CustomText>
+
                         </View>
                     </View>
                     <View style={{ width: "20%", alignItems: "flex-end", marginTop: 40 }}>
@@ -29,26 +27,20 @@ const Device = ({ navigation }: any) => {
                     </View>
                 </View>
             </SafeAreaView>
-            <View style={{ marginTop: 40, paddingHorizontal: 20 }}>
-                <TouchableOpacity onPress={() => setChecked(!checked)}>
-                    <Image source={checked ? require("../../../assets/icon/on.png") : require("../../../assets/icon/off.png")} resizeMethod='scale' style={{ width: "100%", height: 170 }} />
+            <View style={{ paddingHorizontal: 20 }}>
+                <CustomText style={{ marginBottom: 10, marginTop: 40, color: Colors.white }}>account name</CustomText>
+                <CustomTextInput placeholder="James Chukchi" />
+                <CustomText style={{ marginBottom: 10, marginTop: 40, color: Colors.white }}>connected devices</CustomText>
+                <TouchableOpacity style={styles.holder}>
+                    <CustomText style={{ color: "#CFD8D878" }}>16 devices</CustomText>
                 </TouchableOpacity>
-                <View style={{ marginTop: 30 }}>
-                    <View style={styles.favouritesContainer}>
-                        <CustomText style={{ color: Colors.white }}>
-                            {checked ? "Remove from" : "Add to"} favourite
-                        </CustomText>
-                        <Image source={checked ? require("../../../assets/icon/fav.png") : require("../../../assets/icon/n-fav.png")} style={{ width: 30, height: 30 }} />
-                    </View>
-                    <View style={[styles.favouritesContainer, { backgroundColor: "#6F414173", height: 90, marginTop: 10, flexDirection: "column" }]}>
-                        <CustomText style={{ color: Colors.white }}>
-                            unique id number
-                        </CustomText>
-                        <View style={{ width: '90%', height: 40, borderWidth: 0.2, borderColor: Colors.white, borderRadius: 12,alignItems:"center",justifyContent:"center" }}>
-                            <CustomText style={{color:Colors.grey,textAlign:"center"}}>AD22095</CustomText>
-                        </View>
-                    </View>
-                </View>
+                <CustomText style={{ marginBottom: 10, marginTop: 40, color: Colors.white }}>users</CustomText>
+                <TouchableOpacity style={styles.holder}>
+                    <CustomText style={{ color: "#CFD8D878" }}>3 users</CustomText>
+                </TouchableOpacity>
+                <TouchableOpacity style={[styles.holder, { marginBottom: 10, marginTop: 40, }]}>
+                    <CustomText style={{ color: Colors.white,fontWeight:"500" }}>settings</CustomText>
+                </TouchableOpacity>
             </View>
         </ScrollView>
     )
@@ -90,7 +82,22 @@ const styles = StyleSheet.create({
         alignItems: "center",
         padding: 10
 
+    },
+    holder: {
+        backgroundColor: "transparent",
+        borderColor: Colors.grey,
+        borderWidth: 1,
+        color: "#CFD8D878",
+        marginTop: 1,
+        fontSize: 12,
+        height: 55,
+        borderTopEndRadius: 8,
+        borderBottomEndRadius: 8,
+        borderTopLeftRadius: 8,
+        borderBottomLeftRadius: 8,
+        justifyContent: "center",
+        paddingHorizontal: 10
     }
 })
 
-export default Device
+export default Profile

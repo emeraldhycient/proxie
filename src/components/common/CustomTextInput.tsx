@@ -23,7 +23,7 @@ const CustomTextInput = ({ style, ...rest }: any) => {
             style={[defaultStyles, style]}
             {...rest}
             textColor={Colors.black}
-            placeholderTextColor={Colors.gray}
+            placeholderTextColor={"#CFD8D878"}
             underlineColor='transparent'
             theme={{
                 colors: {

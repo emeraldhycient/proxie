@@ -1,13 +1,10 @@
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
-import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-import EvilIcons from "react-native-vector-icons/EvilIcons";
 import Dashboard from "../screens/dashboard/dashboard";
-import MapScreen from "../screens/map/mapview";
 import Colors from "../theme/colors";
 import React from 'react';
 import { View, TouchableOpacity, Text, StyleSheet, Image } from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons'; // Make sure to install this package
-import Trending from "../screens/trending/trending";
+import ConnectDevice from "../screens/dashboard/connectDevice";
+import Profile from "../screens/profile/profile";
 
 
 
@@ -36,8 +33,8 @@ function BottomTab() {
         } as never}
       />
       <Screen
-        name="stream"
-        component={Dashboard}
+        name="addDevice"
+        component={ConnectDevice}
         options={{
           tabBarIcon: ({ color }) => (
             <View
@@ -59,7 +56,7 @@ function BottomTab() {
     
       <Screen
         name="profile"
-        component={Dashboard}
+        component={Profile}
         options={{
           headerShown: false,
           tabBarIcon: ({ color, focused }: any) => (
