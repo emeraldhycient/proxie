@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import GettingStarted from './src/screens/onboarding/gettingStarted';
+import FlashMessage from "react-native-flash-message";
 import AuthStack from './src/routers/Auth';
 import { NavigationContainer } from '@react-navigation/native';
 import React, { useState, useEffect } from "react";
@@ -44,6 +44,7 @@ export default function App() {
               :
               <MainStack />
           }
+          <FlashMessage position="bottom" /> 
         </PaperProvider>
       </NavigationContainer>
     </View>

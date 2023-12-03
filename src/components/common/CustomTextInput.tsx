@@ -7,7 +7,7 @@ const CustomTextInput = ({ style, ...rest }: any) => {
         backgroundColor: "transparent",
         borderColor:Colors.grey,
         borderWidth: 1,
-        color: Colors.black,
+        color: Colors.white,
         marginTop: 1,
         fontSize: 12,
         borderTopEndRadius: 8,
@@ -22,12 +22,12 @@ const CustomTextInput = ({ style, ...rest }: any) => {
         <TextInput
             style={[defaultStyles, style]}
             {...rest}
-            textColor={Colors.black}
+            textColor={Colors.white}
             placeholderTextColor={"#CFD8D878"}
             underlineColor='transparent'
             theme={{
                 colors: {
-                    text: 'black', underlineColor: 'transparent'
+                    text: 'white', underlineColor: 'transparent'
                 }
             }} />
     );
