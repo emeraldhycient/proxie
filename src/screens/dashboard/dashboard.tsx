@@ -1,5 +1,5 @@
 import { View, Image, ScrollView, TouchableOpacity, StyleSheet, useWindowDimensions, SafeAreaView } from 'react-native'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import CustomHeader from '../../components/common/Header'
 import Colors from '../../theme/colors';
 import Button from '../../components/common/button';
@@ -9,13 +9,35 @@ import EmptyState from '../../components/dashboard/emptyState';
 import FavCard from '../../components/dashboard/FavCard';
 import GroupCard from '../../components/dashboard/groupCard';
 import ToolTip from '../../components/common/ToolTip';
+import Alert from '../../helpers/alert';
+import userService from '../../services/user/user.service';
+import useAuthenticationState from '../../states/zustandStore/authentication';
 
 
 const Dashboard = ({ navigation }: any) => {
 
     const { height } = useWindowDimensions()
 
-    const [isEmpty, setisEmpty] = useState(true)
+    const [user, setuser] = useState<any>("")
+
+    const setUser = useAuthenticationState((state: any) => state.setUser);
+
+
+    const getUser = async () => {
+        try {
+            const me = await userService.getMe()
+            console.log(me.data)
+            setuser(me.data)
+            setUser(me.data)
+        } catch (error: any) {
+            Alert.error(error.message)
+        }
+    }
+
+    useEffect(() => {
+        getUser()
+    }, [])
+
 
     return (
         <ScrollView style={{ backgroundColor: Colors.bgPrimary }}>
@@ -23,21 +45,21 @@ const Dashboard = ({ navigation }: any) => {
                 <View style={[styles.headerContainer]}>
                     <View style={{ marginTop: 40 }}>
                         <CustomText style={styles.greetings}>good morning</CustomText>
-                        <CustomText style={styles.title}>james</CustomText>
+                        <CustomText style={styles.title}>{user?.name ??'Loading ...'}</CustomText>
                     </View>
                     <ToolTip >
                         <View style={{ paddingHorizontal: 20, paddingVertical: 10 }}>
                             <TouchableOpacity onPress={() => navigation.navigate("notifications")}>
                                 <CustomText style={{ marginVertical: 5 }}>Notification</CustomText>
                             </TouchableOpacity>
-                            <TouchableOpacity onPress={()=>navigation.navigate("profile")}>
+                            <TouchableOpacity onPress={() => navigation.navigate("profile")}>
                                 <CustomText style={{ marginVertical: 5 }}>My profile</CustomText>
                             </TouchableOpacity>
                             <TouchableOpacity onPress={() => navigation.navigate("connectDevice")}>
                                 <CustomText style={{ marginVertical: 5 }}>Scan qr code</CustomText>
                             </TouchableOpacity>
-  
-                            <TouchableOpacity onPress={()=>navigation.navigate("profile")}>
+
+                            <TouchableOpacity onPress={() => navigation.navigate("profile")}>
                                 <CustomText style={{ marginVertical: 5 }}>sign out</CustomText>
                             </TouchableOpacity>
                         </View>
@@ -46,11 +68,11 @@ const Dashboard = ({ navigation }: any) => {
             </SafeAreaView>
             <View style={{ marginTop: 40, paddingHorizontal: 20, zIndex: 1 }}>
                 {
-                    isEmpty &&
-                    <EmptyState setisEmpty={setisEmpty} navigation={navigation} />
+                    !user.has_devices &&
+                    <EmptyState  navigation={navigation} />
                 }
                 {
-                    !isEmpty &&
+                    user.has_devices &&
                     <View>
                         <View style={styles.favouritesContainer}>
                             <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>

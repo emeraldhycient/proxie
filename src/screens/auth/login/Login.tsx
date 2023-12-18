@@ -10,14 +10,16 @@ import Button from '../../../components/common/button';
 import useAuthenticationState from '../../../states/zustandStore/authentication';
 import Alert from '../../../helpers/alert';
 import authService from '../../../services/auth/auth.service';
+import { setToken } from '../../../states/asyncStore/token';
+import { setStore } from '../../../states/asyncStore/persistToggles';
 
 const Login = ({ navigation, route }: any) => {
   const [secureTextEntry, setSecureTextEntry] = useState(true);
   const setIsAuthenticated = useAuthenticationState((state: any) => state.setIsAuthenticated);
 
   const params = route.params
-  const [password, setpassword] = useState("");
-  const [email, setEmail] = useState(params?.email)
+  const [password, setpassword] = useState("T261g428wh@!");
+  const [email, setEmail] = useState(params?.email || "atlinted@mailnesia.com")
   const [isloading, setisloading] = useState(false)
 
 
@@ -35,6 +37,8 @@ const Login = ({ navigation, route }: any) => {
     try {
       const resp = await authService.login({ email, password })
       console.log(resp.data)
+      setToken(resp.data.access)
+      setStore("refresh_token", resp.data.refresh)
       Alert.success("ogin successful")
       setIsAuthenticated(true)
       setisloading(false)

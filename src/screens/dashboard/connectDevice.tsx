@@ -24,6 +24,11 @@ const ConnectDevice = ({ navigation }: any) => {
     const [hasPermission, setHasPermission] = useState<boolean | null>(null);
     const [scanned, setScanned] = useState(false);
 
+    const [name, setname] = useState("")
+    const [pass_key, setpass_key] = useState("")
+    const [slug, setslug] = useState("")
+    // const [, set] = useState("")
+
     useEffect(() => {
         const getBarCodeScannerPermissions = async () => {
             const { status } = await BarCodeScanner.requestPermissionsAsync();
